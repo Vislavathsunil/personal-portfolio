@@ -33,6 +33,12 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { SiTypescript } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
+// Certificates Images
+import frontend from "../assets/Cerificates/frontend.png";
+import mongodb from "../assets/Cerificates/mongodb.png";
+import dynamic from "../assets/Cerificates/dynamic.png";
+import aproxim from "../assets/Cerificates/aproxim.png";
+
 
 
 
@@ -300,3 +306,30 @@ export const SOCIAL_MEDIA_LINKS = [
     icon: <FaXTwitter fontSize={25} className="hover:text-black text-3xl sm:text-3xl" />,
   },
 ];
+
+export const Certificates_details = [
+  {
+    link : "https://www.coursera.org/account/accomplishments/verify/MXJ3JF5KQ8Z8",
+    image : frontend,
+    title: "Introduction to Web Development with HTML, CSS, JavaScript",
+    duration : "Duration: January 2024 - May 2022",
+  },
+  {
+    link : "https://learn.mongodb.com/c/qA1Ad8vJTn2AO1a_UD27Qw",
+    image : mongodb,
+    title: "MongoDB and Document Mode",
+    duration : "Duration: April 2024 - Jun 2024",
+  },
+  {
+    link : "https://coursera.org/verify/BGMTJNLPDJ2F",
+    image : dynamic,
+    title: "Dynamic Programming, Greedy Algorithms",
+    duration : "Duration: March 2024 - April 2024",
+  },
+  {
+    link : "https://coursera.org/verify/A42MQ3SUQ92S",
+    image : aproxim,
+    title: "Approximation Algorithms",
+    duration : "Duration: April 2024 - May 2024",
+  },
+]

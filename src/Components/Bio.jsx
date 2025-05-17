@@ -4,6 +4,7 @@ import { BIO } from "../constants/index"
 
 // motion framer
 import { motion } from "framer-motion";
+import man from "../assets/man.png";
 
 function Bio() {
     return (
@@ -19,7 +20,7 @@ function Bio() {
                 {/* Image Section */}
                 <div className="w-full md:w-1/2 flex justify-center">
                     <img
-                        src="src/assets/man.png"
+                        src={man}
                         alt="profile"
                         className="w-2/3 md:w-full max-w-sm object-contain"
                     />
