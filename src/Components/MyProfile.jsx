@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 // importing images
 import carl from "../assets/carl.jpeg"
-import sunil from "../assets/sunil.jpg"
+import sunil from "../assets/power.png"
 
 // typed animation
 import { ReactTyped } from "react-typed";
@@ -25,16 +25,16 @@ function MyProfile() {
                 transition={{ duration: 1 }}
                 className="w-full lg:w-1/2  " >
 
-                <h2 className="text-lg px-2  font-semibold"
+                <h2 className="text-md px-2  font-semibold"
                     style={{ marginTop: window.innerWidth <= 400 ? '16px' : '' }}
                 > {HERO.greet}</h2>
-                <h1 className="p-2 text-4xl md:text-5xl font-bold tracking-wide "  >{HERO.name}</h1>
-                <h2 className="mb-1 text-2xl p-2 text-cyan-400 font-semibold">
+                <h1 className="p-2 text-3xl md:text-4xl font-bold tracking-wide "  >{HERO.name}</h1>
+                <h2 className="mb-1 text-lg p-2 text-cyan-400 font-semibold">
                     <ReactTyped strings={[`${HERO.role}`, "Web Developer"]} typeSpeed={40}
                         backSpeed={50}
                         loop />
                 </h2>
-                <p className="p-2 mb-2 text-xl  hover:font-extralight" >{HERO.description}</p>
+                <p className="p-2 mb-2 text-sm md:text-md    hover:font-extralight" >{HERO.description}</p>
             </motion.div>
 
 
@@ -59,7 +59,7 @@ function MyProfile() {
                                 ease: "easeInOut",
                             },
                         }}
-                        src={sunil} alt="Pofile image " className="rounded-3xl" width={350} heigth={350} />
+                        src={sunil} alt="Pofile image " className="rounded-xl" width={400} heigth={400} />
                 </div>
             </motion.div>
         </section>

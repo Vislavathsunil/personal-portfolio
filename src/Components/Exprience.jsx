@@ -1,55 +1,103 @@
-import React from 'react'
-import { EXPERIENCES } from '../constants/index'
-
-// motion framer
+import React from "react";
+import { EXPERIENCES } from "../constants";
 import { motion } from "framer-motion";
-import { SlCalender } from 'react-icons/sl';
+import { SlCalender } from "react-icons/sl";
 import { FaBuilding, FaBriefcase } from "react-icons/fa";
 
-function Exprience() {
-    return (
-        <section id='work' className='pt-5'>
-            <motion.h2
-                initial={{ opacity: 0, y: -20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                className='mb-8 pt-4 text-3xl text-center lg:text-4xl font-bold'
-            >
-                Experience
-            </motion.h2>
+function Experience() {
+  return (
+    <section
+      id="work"
+      className="py-20 px-6 md:px-12 lg:px-24"
+    >
+      <motion.h2
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center text-2xl md:text-3xl font-bold mb-16"
+      >
+        Experience
+      </motion.h2>
 
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className='flex flex-col justify-center gap-12 px-6 py-8 rounded-lg'
-            >
-                {EXPERIENCES.map((experience, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.2 }}
-                        className='flex flex-col gap-2 border border-stone-50/20 hover:border-stone-100/40 transition-all duration-300 bg-stone-50/10 backdrop-blur-md px-6 py-5 rounded-xl shadow-md'
-                    >
-                        <div className="flex items-center gap-2 text-xl font-semibold text-white">
-                            <FaBriefcase className="text-yellow-400" />
-                            {experience.title}
-                        </div>
-                        <div className="flex items-center gap-2 text-lg text-stone-300">
-                            <FaBuilding className="text-sky-400" />
-                            {experience.company}
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-stone-400 italic">
-                            <SlCalender className="text-pink-400" />
-                            {experience.duration}
-                        </div>
-                        <p className="mt-2 text-stone-200">{experience.description}</p>
-                    </motion.div>
-                ))}
-            </motion.div>
-        </section>
-    )
+      <div className="grid gap-8 max-w-6xl mx-auto">
+        {EXPERIENCES.map((experience, index) => (
+          <motion.div
+            key={index}
+            initial={{
+              opacity: 0,
+              y: 50,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.2,
+            }}
+            whileHover={{
+              y: -8,
+              scale: 1.02,
+            }}
+            className="
+              relative
+              overflow-hidden
+              rounded-3xl
+              bg-white/5
+              backdrop-blur-lg
+              border border-white/10
+              shadow-xl
+              p-6 md:p-8
+            "
+          >
+            {/* Accent Bar */}
+            <div className="absolute left-0 top-0 h-full w-2 bg-gradient-to-b from-cyan-500 to-purple-500"></div>
+
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              
+              <div>
+                <div className="flex items-center gap-3">
+                  <FaBriefcase className="text-cyan-400 text-xl" />
+
+                  <h3 className="text-lg md:text-xl font-bold">
+                    {experience.title}
+                  </h3>
+                </div>
+
+                <div className="flex items-center gap-2 mt-2 text-gray-300">
+                  <FaBuilding className="text-purple-400" />
+                  <p className="text-sm md:text-base">
+                  {experience.company}
+
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center text-sm gap-2 text-cyan-400">
+                <SlCalender />
+                {experience.duration}
+              </div>
+            </div>
+
+            <div className="h-[1px] bg-white/10 my-5"></div>
+
+            <ul className="space-y-3 textsm md:text-base">
+              {experience.description.map((desc, idx) => (
+                <li
+                  key={idx}
+                  className="flex gap-3 text-gray-300 text-sm md:text-md"
+                >
+                  <span className="text-cyan-400">✦</span>
+                  <span>{desc}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
-export default Exprience
+export default Experience;

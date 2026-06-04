@@ -25,11 +25,17 @@ function Footer() {
             <div className=' w-full flex flex-wrap justify-center items-center gap-5 '>
                 {
                     SOCIAL_MEDIA_LINKS.map((medias, index) => (
-                        <motion.a
+                        <motion.p
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.1, delay: index * 0.2 }}
-                            key={index} href={medias.href} target="_blank" rel="noopener noreferrer" className='h-12 w-12'  > {medias.icon} </motion.a>
+                            key={index}
+                            className='text-sm'
+                        >
+
+                            < a
+                                href={medias.href} target="_blank" rel="noopener noreferrer"   > {medias.icon} </a>
+                        </motion.p>
                     ))
                 }
             </div>
