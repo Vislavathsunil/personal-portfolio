@@ -169,7 +169,7 @@ export const MySkills = [
         icon: <IoLogoJavascript className="text-4xl text-yellow-400 lg:text-4xl" />,
         name: "JavaScript",
       },
-  
+
       {
         icon: <RiReactjsLine className="text-4xl text-cyan-400 lg:text-4xl" />,
         name: "React JS",
@@ -246,10 +246,11 @@ export const EXPERIENCES = [
     company: "Sagar Defence Engineering  ",
     duration: "March 2026 - Present",
     description: [
-      "Developed interactive web applications using React.js, integrating dynamic UI components with efficient state management",
-      "Built real-time 3D visualizations using React Fiber, enabling immersive and responsive graphical experiences in the browser",
-      "Integrated physics-based simulations using cannon-es, implementing realistic motion, collision detection, and object interactions",
-      "Optimized rendering performance and asset handling in complex 3D environments, ensuring smooth user experience and reduced latency"
+      "Built responsive web applications using React.js, JavaScript, and Tailwind CSS to deliver intuitive user experiences",
+      "Developed and integrated REST APIs with Node.js and Express.js for seamless frontend-backend communication",
+      " Created reusable UI components in React.js and Tailwind CSS, improving development efficiency and consistency",
+      " Connected applications to real-time data sources through REST APIs, enabling dynamic dashboards and reporting",
+      " Optimized application performance and scalability across the React.js frontend and Node.js backend"
     ],
 
   },
