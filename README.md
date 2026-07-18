@@ -1,30 +1,131 @@
-# 💻 Personal Portfolio 
+# ✨ Personal Portfolio | Vislavath Sunil
 
-## Overview
+<div align="center">
+  <p align="center">
+    A premium, modern, and fully responsive personal portfolio website showcasing my engineering journey, featured projects, certifications, and technical skills. Built using React.js, Vite, Tailwind CSS, and Framer Motion.
+  </p>
 
-***This is my personal portfolio website showcasing my projects, skills, and experiences as a software developer. It highlights the work I've done and the technologies I am proficient in. The site is designed to be responsive and interactive, ensuring a seamless user experience on any device.***
+  <p align="center">
+    <a href="https://vislavathsunil.vercel.app/"><strong>Explore Live Demo »</strong></a>
+  </p>
 
+  <!-- Badges -->
+  <p align="center">
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=FFDF00" alt="Vite" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
+    <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase" />
+  </p>
+</div>
 
-## Technologies Used
+---
 
-- Frontend: HTML5, Tailwind CSS, JavaScript, React.js
-- Styling: Tailwind CSS
-- Animations: Framer Motion
-- Hosting: (Specify hosting platform like GitHub Pages, Vercel, etc.)
+## 🎨 Key Features
 
-  
+*   **⚡ High Performance**: Fast builds and instant hot reloading powered by **Vite**.
+*   **📱 Mobile-First Responsiveness**: Handcrafted grid cards, padding shifts, and navigation bars that adapt fluidly across all viewports (from 320px small phones to large desktop monitors).
+*   **🌀 Interactive Custom Cursor & Glows**: A modern, custom-animated tracking cursor coupled with glowing radial lights behind sections for a premium aesthetic.
+*   **💼 Work & Academic Timelines**: Styled timeline layouts detailing my SDE internship at Sagar Defence Engineering and MERN Stack training.
+*   **🚀 Projects Grid with Tech Pills**: Aspect-ratio protected screenshot cards featuring dynamic technology tag pills (e.g., Firebase Auth, Firestore, Gemini API, jsPDF) and live deployment redirection.
+*   **📜 Certificate Verification**: A dedicated credentials gallery displaying certificates with verify links directly mapped to credential authorities.
+*   **✉️ EmailJS contact Form**: A validated form using `react-hook-form` and `@emailjs/browser` that logs precise status errors to the toast alerts and console.
 
-  
-## 🎨 Features
-- **Responsive Design:** Built with Tailwind CSS to ensure it looks great on all screen sizes.
-- **Project Showcase:** Displays key projects with details such as technology stacks, live demos, and GitHub repository links.
-- **Contact Section:** Includes a contact form where visitors can get in touch with me. Email service is integrated using Email.js for direct messaging.
-- **Skills & Experiences:** Lists my technical skills, tools, and a brief overview of my professional experiences.
-- **Interactive Animations:** Subtle animations to improve user engagement, crafted with Framer Motion.
+---
 
-## 🔗 Links
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://vislavathsunil.vercel.app/)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sunil2004/) 
-## Authors
+## 🛠️ Tech Stack & Dependencies
 
-- [@vislavathsunil](https://github.com/Vislavathsunil)
+*   **Core Framework**: [React.js](https://react.dev/) (v18.3.1)
+*   **Build Tool**: [Vite](https://vite.dev/) (v5.4.0)
+*   **Styles & Layout**: [Tailwind CSS](https://tailwindcss.com/) & Autoprefixer
+*   **Animations**: [Framer Motion](https://www.framer.com/motion/) (v11.3.24) & [React Typed](https://www.npmjs.com/package/react-typed)
+*   **Form Management**: [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
+*   **Mail API**: [@emailjs/browser](https://www.emailjs.com/) (v4.4.1)
+*   **Alerts**: [React Hot Toast](https://react-hot-toast.com/)
+
+---
+
+## 🚀 Getting Started
+
+To get a local copy up and running, follow these simple steps:
+
+### 1. Prerequisites
+Ensure you have Node.js installed on your machine.
+```bash
+node -v
+npm -v
+```
+
+### 2. Clone the Repository
+```bash
+git clone https://github.com/Vislavathsunil/personal-portfolio.git
+cd personal-portfolio
+```
+
+### 3. Install Dependencies
+```bash
+npm install
+```
+
+### 4. Start Development Server
+```bash
+npm run dev
+```
+Open `http://localhost:5173/` in your browser to view the application.
+
+### 5. Build for Production
+```bash
+npm run build
+```
+
+---
+
+## 📂 Project Structure
+
+```
+├── public/                 # Static assets (Vite logo)
+├── src/
+│   ├── assets/             # Images, certificates, and resumes
+│   │   ├── Cerificates/    # Verification assets
+│   │   ├── CV/             # Downloadable resume PDF
+│   │   └── projectImages/  # Project screenshot files
+│   ├── Components/         # Modular React components
+│   │   ├── MyProfile.jsx   # Hero section
+│   │   ├── NavBar.jsx      # Sticky responsive navigation
+│   │   ├── Exprience.jsx   # Work history cards
+│   │   ├── NewSkills.jsx   # Tech stack grids
+│   │   ├── Projects.jsx    # Feature project cards
+│   │   ├── Certificates.jsx# Credential cards
+│   │   ├── Education.jsx   # Academic timelines
+│   │   ├── ConnectForm.jsx # Validated contact form
+│   │   └── Footer.jsx      # Social anchors & copy
+│   ├── constants/
+│   │   └── index.jsx       # Centralized JSON/Data config objects
+│   ├── App.jsx             # Main layout assembler
+│   ├── index.css           # Global stylesheet & animations
+│   └── main.jsx            # React root mount point
+├── package.json            # Scripts & libraries lists
+├── tailwind.config.js      # Tailwind configurations
+└── vite.config.js          # Vite compilation plugins
+```
+
+---
+
+## 📬 Contact & Connect
+
+Feel free to reach out to me for project collaborations, internships, or engineering roles!
+
+<p align="left">
+  <a href="mailto:vsunilpower42@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  <a href="https://www.linkedin.com/in/sunil2004/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://github.com/Vislavathsunil">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+</p>
+
+Created with ❤️ by [@vislavathsunil](https://github.com/Vislavathsunil).
