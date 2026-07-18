@@ -6,6 +6,7 @@ import {
   FaDiscord,
   FaInstagram,
   FaGitAlt,
+  FaArrowPointer,
 } from "react-icons/fa6";
 
 import projectImage1 from "../assets/projectImages/project1.png";
@@ -14,6 +15,8 @@ import projectImage3 from "../assets/projectImages/project3.png";
 import projectImage4 from "../assets/projectImages/project4.png";
 import projectImage5 from "../assets/projectImages/project5.png";
 import projectImage6 from "../assets/projectImages/project6.png";
+import easyinvoiceImage from "../assets/projectImages/easyinvoice.png";
+import yatrikaiImage from "../assets/projectImages/yatrikai.png";
 
 
 
@@ -23,14 +26,13 @@ import projectImage6 from "../assets/projectImages/project6.png";
 // Skills Icons
 import { RiReactjsLine, RiSupabaseFill, RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandFramerMotion, TbBrandNextjs } from "react-icons/tb";
-import { SiMongodb, SiShadcnui } from "react-icons/si";
+import { SiMongodb, SiShadcnui, SiTypescript, SiFirebase, SiGithubcopilot } from "react-icons/si";
 import { DiRedis } from "react-icons/di";
 import { FaNodeJs } from "react-icons/fa";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
-import { SiTypescript } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
 // Certificates Images
@@ -47,7 +49,6 @@ import aproxim from "../assets/Cerificates/aproxim.png";
 
 export const NAVIGATION_LINKS = [
   { label: "About", href: "#about" },
-  { label: "Bio", href: "#bio" },
   { label: "Experience", href: "#work" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
@@ -61,58 +62,82 @@ export const HERO = {
   name: "Vislavath Sunil",
   greet: "Hello World! It's me,",
   role: "Frontend Developer|",
-  description: "Frontend Developer focused on React & JavaScript.js — I build fast, accessible, and visually sharp interfaces. I care about performance as much as design. Open to exciting opportunities."
+  description: "I build modern, responsive, and scalable web applications using React.js, TypeScript, Firebase, and Node.js. Passionate about creating intuitive user experiences, I enjoy developing production-ready SaaS applications with clean, maintainable code and continuously improving my engineering skills."
 
 };
 
 export const PROJECTS = [
   {
     id: 1,
+    name: "EasyInvoice",
+    description:
+      "EasyInvoice is a Firebase-powered invoice generator that enables users to create, manage, and download professional invoices with ease. It includes secure authentication, cloud storage, client management, product management, and responsive design for all devices.",
+    image: easyinvoiceImage,
+    githubLink: "https://easy-invoice-xw86.vercel.app/",
+    tags: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Firebase Authentication",
+      "Firestore",
+      "Firebase Storage",
+      "jsPDF"
+    ],
+  },
+  {
+    id: 2,
+    name: "Yatrik AI",
+    description:
+      "Yatrik AI is an AI-powered travel planning platform for India that generates personalized itineraries, recommends destinations and accommodations, and enables users to download complete trip plans.",
+    image: yatrikaiImage,
+    githubLink: "https://yatrik-ai-psi.vercel.app/",
+    tags: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Firebase",
+      "Firestore",
+      "Firebase Authentication",
+      "Gemini API"
+    ],
+  },
+  {
+    id: 3,
     name: "Restaurant Landing Page",
     description:
       "This restaurant landing page, built with React.js, Tailwind CSS, and Framer Motion, offers a modern, responsive design with smooth animations for a seamless user experience.",
     image: projectImage1,
     githubLink: "https://restaurant-landing-page-zeta-rosy.vercel.app/",
+    tags: ["React.js", "Tailwind CSS", "Framer Motion"],
   },
 
   {
-    id: 2,
+    id: 4,
     name: "Ochi Landing Page",
     description: "Ochi is a modern website built with React.js, Tailwind CSS, and Framer Motion, featuring a sleek UI, smooth animations, and a fully responsive design for an engaging user experience.",
     image: projectImage2,
     githubLink: "https://ochi-landing-page.vercel.app/",
+    tags: ["React.js", "Tailwind CSS", "Framer Motion"],
   },
   {
-    id: 3,
+    id: 5,
     name: "Gym Landing Page",
     description:
       "Evogym is a modern fitness website built with React, Tailwind CSS, and Framer Motion, featuring sleek animations, responsive design, and dynamic content for an engaging user experience.",
     image: projectImage3,
     githubLink: "https://evogym-landing-page-five.vercel.app/",
+    tags: ["React", "Tailwind CSS", "Framer Motion"],
   },
   {
-    id: 4,
+    id: 6,
     name: "Job Portal Application",
     description:
       "This website developed using React.js, Tailwind CSS, and Shadcn for a responsive frontend, with Clerk for secure user management and Supabase for real-time backend, creating a fast and scalable platform.",
     image: projectImage4,
     githubLink: "https://hirrd-rouge.vercel.app/",
+    tags: ["React.js", "Tailwind CSS", "Shadcn", "Clerk", "Supabase"],
   },
-  // {
-  //   id: 5,
-  //   name: "Google Flights",
-  //   description:
-  //     "Google Flights helps users search and compare flight options and prices across airlines.It allows users to search, compare, and book flights based on price, duration, and airline preferences.",
-  //   image: projectImage5,
-  //   githubLink: "https://google-flights-pi.vercel.app/",
-  // },
-  // {
-  //   id: 6,
-  //   name: "URL Summarizer AI",
-  //   description: "Summarizer AI is a SaaS tool that turns website URLs into AI-generated summaries. Built with React JS, Tailwind CSS, and Rapid API, it offers a fast, responsive user experience for summarizing web content.",
-  //   image: projectImage6,
-  //   githubLink: "https://summerize-ai-sigma.vercel.app/",
-  // },
 ];
 
 export const BIO = [
@@ -211,10 +236,10 @@ export const MySkills = [
         icon: <SiMongodb className="text-4xl text-green-600 lg:text-4xl" />,
         name: "MongoDB Atlas"
       },
-      // {
-      //   icon: <RiSupabaseFill className="text-4xl text-green-600 lg:text-5xl" />,
-      //   name: "Supabase"
-      // },
+      {
+        icon: <SiFirebase className="text-4xl text-amber-500 lg:text-4xl" />,
+        name: "Firebase"
+      },
     ]
   },
   {
@@ -223,6 +248,14 @@ export const MySkills = [
       {
         icon: <VscVscode className="text-4xl text-cyan-500 lg:text-4xl" />,
         name: "VS Code"
+      },
+      {
+        icon: <FaArrowPointer className="text-4xl text-sky-400 lg:text-4xl" />,
+        name: "Cursor"
+      },
+      {
+        icon: <SiGithubcopilot className="text-4xl text-purple-400 lg:text-4xl" />,
+        name: "GitHub Copilot"
       },
       {
         icon: <FaGithub className="text-4xl text-white lg:text-4xl" />,
@@ -239,10 +272,9 @@ export const MySkills = [
   }
 ]
 
-
 export const EXPERIENCES = [
   {
-    title: "Graduate Engineering Trainee",
+    title: "Software Development Engineer (Intern)",
     company: "Sagar Defence Engineering  ",
     duration: "March 2026 - Present",
     description: [
@@ -255,7 +287,7 @@ export const EXPERIENCES = [
 
   },
   {
-    title: "MERN Stack",
+    title: "Web Developer (Inter)",
     company: "Cipher Schools ",
     duration: "June 2024 - August 2024",
     description: [

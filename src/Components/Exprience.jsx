@@ -6,90 +6,81 @@ import { FaBuilding, FaBriefcase } from "react-icons/fa";
 
 function Experience() {
   return (
-    <section
-      id="work"
-      className="py-20 px-6 md:px-12 lg:px-24"
-    >
-      <motion.h2
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-center text-2xl md:text-3xl font-bold mb-16"
-      >
-        Experience
-      </motion.h2>
+    <section id="work" className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
+      {/* Background Glow */}
+      <div className="absolute left-1/3 top-1/2 w-96 h-96 bg-cyan-500/5 blur-[140px] rounded-full pointer-events-none -z-10"></div>
 
-      <div className="grid gap-8 max-w-6xl mx-auto">
+      {/* Heading */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+          Work History
+        </h2>
+        <div className="h-1 w-20 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mt-4 rounded-full" />
+      </motion.div>
+
+      {/* Cards List */}
+      <div className="flex flex-col gap-8">
         {EXPERIENCES.map((experience, index) => (
           <motion.div
             key={index}
-            initial={{
-              opacity: 0,
-              y: 50,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{
-              duration: 0.6,
-              delay: index * 0.2,
-            }}
-            whileHover={{
-              y: -8,
-              scale: 1.02,
-            }}
-            className="
-              relative
-              overflow-hidden
-              rounded-3xl
-              bg-white/5
-              backdrop-blur-lg
-              border border-white/10
-              shadow-xl
-              p-6 md:p-8
-            "
+            transition={{ duration: 0.6, delay: index * 0.15 }}
+            whileHover={{ y: -6 }}
+            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/40 backdrop-blur-xl p-6 md:p-8 transition-all duration-300 hover:border-cyan-500/30 hover:shadow-[0_10px_35px_rgba(6,182,212,0.08)]"
           >
-            {/* Accent Bar */}
-            <div className="absolute left-0 top-0 h-full w-2 bg-gradient-to-b from-cyan-500 to-purple-500"></div>
+            {/* Glowing Accent Bar */}
+            <div className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-cyan-500 to-purple-500 opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              
-              <div>
-                <div className="flex items-center gap-3">
-                  <FaBriefcase className="text-cyan-400 text-xl" />
-
-                  <h3 className="text-lg md:text-xl font-bold">
-                    {experience.title}
-                  </h3>
+            {/* Header Content */}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+              <div className="flex items-center gap-4">
+                {/* Briefcase Icon Container */}
+                <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 text-cyan-400 text-xl shadow-md group-hover:scale-105 transition-transform duration-300">
+                  <FaBriefcase />
                 </div>
 
-                <div className="flex items-center gap-2 mt-2 text-gray-300">
-                  <FaBuilding className="text-purple-400" />
-                  <p className="text-sm md:text-base">
-                  {experience.company}
-
-                  </p>
+                <div>
+                  <h3 className="text-lg md:text-xl font-bold text-white transition-colors duration-300 group-hover:text-cyan-300">
+                    {experience.title}
+                  </h3>
+                  <div className="flex items-center gap-2 mt-1.5 text-slate-300 text-sm">
+                    <FaBuilding size={14} className="text-purple-400" />
+                    <span>{experience.company}</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-center text-sm gap-2 text-cyan-400">
-                <SlCalender />
-                {experience.duration}
+              {/* Date Badge */}
+              <div className="flex-shrink-0 w-fit">
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-cyan-500/15 bg-cyan-500/5 text-cyan-400 text-xs font-semibold shadow-inner">
+                  <SlCalender size={12} />
+                  {experience.duration}
+                </span>
               </div>
             </div>
 
-            <div className="h-[1px] bg-white/10 my-5"></div>
+            {/* Separator */}
+            <div className="h-[1px] bg-white/5 my-6"></div>
 
-            <ul className="space-y-3 textsm md:text-base">
+            {/* Description Points */}
+            <ul className="space-y-3.5">
               {experience.description.map((desc, idx) => (
                 <li
                   key={idx}
-                  className="flex gap-3 text-gray-300 text-sm md:text-md"
+                  className="flex items-start gap-3.5 text-slate-400 group-hover:text-slate-300 transition-colors duration-200"
                 >
-                  <span className="text-cyan-400">✦</span>
-                  <span>{desc}</span>
+                  <span className="text-cyan-400 mt-1 select-none flex-shrink-0 text-sm">✦</span>
+                  <span className="text-sm md:text-base font-light leading-relaxed">
+                    {desc}
+                  </span>
                 </li>
               ))}
             </ul>

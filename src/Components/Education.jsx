@@ -62,7 +62,7 @@ function Education() {
                 scale: 1.03,
                 y: -8,
               }}
-              className="sm:ml-14 md:ml-0 md:w-[45%] p-6 rounded-3xl
+              className="w-full sm:ml-14 md:ml-0 md:w-[45%] p-6 rounded-3xl
               bg-white/5 backdrop-blur-md
               border border-white/10
               shadow-lg hover:shadow-cyan-500/20

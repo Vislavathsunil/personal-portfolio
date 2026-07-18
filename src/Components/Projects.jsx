@@ -1,73 +1,13 @@
-// import { PROJECTS } from "../constants/index";
-// import { motion } from "framer-motion";
-
-// function Projects() {
-//   return (
-//     <section className="pt-10" id="projects">
-//       <motion.h1
-//         initial={{ opacity: 0, y: -20 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 1 }}
-//         className="mb-12 text-center text-2xl lg:text-3xl font-bold"
-//       >
-//         Projects
-//       </motion.h1>
-
-//       {/* Grid */}
-//       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-//         {PROJECTS.map((ele) => (
-//           <motion.div
-//             key={ele.id}
-//             initial={{ opacity: 0, scale: 0.9 }}
-//             whileInView={{ opacity: 1, scale: 1 }}
-//             transition={{ duration: 0.6 }}
-//             whileHover={{ scale: 1.02 }}
-//             className="bg-black/40 rounded-3xl shadow-lg overflow-hidden flex flex-col items-center p-4 text-white"
-//           >
-//             {/* Image */}
-//             <img
-//               src={ele.image}
-//               alt={ele.name}
-//               className="rounded-xl w-full h-48 object-fill mb-4"
-//             />
-
-//             {/* Title */}
-//             <h2 className="text-xl font-semibold text-center">{ele.name}</h2>
-
-//             {/* Description */}
-//             <p className="text-sm  text-center mt-4 mb-4 px-2">
-//               {ele.description}
-//             </p>
-
-//             {/* Button */}
-//             <a
-//               href={ele.githubLink}
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               className="border border-black text-black px-5 py-2 rounded-full text-sm bg-gray-100 transition"
-//             >
-//               Live Link
-//             </a>
-//           </motion.div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default Projects;
-
-
-
-
+import React from "react";
 import { PROJECTS } from "../constants/index";
 import { motion } from "framer-motion";
+import { FiExternalLink } from "react-icons/fi";
 
 const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -75,88 +15,109 @@ const containerVariants = {
 const cardVariants = {
   hidden: {
     opacity: 0,
-    y: 50,
+    y: 40,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
-      ease: "easeOut",
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1],
     },
   },
 };
 
 function Projects() {
   return (
-    <section
-      id="projects"
-      className="py-16 px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto"
-    >
-      {/* Heading */}
-      <motion.h1
-        initial={{ opacity: 0, y: -40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="mb-14 text-center text-2xl md:text-3xl lg:text-3xl font-bold text-white"
-      >
-        My Projects
-      </motion.h1>
+    <section id="projects" className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      {/* Background Glow */}
+      <div className="absolute right-1/4 top-1/3 w-80 h-80 bg-purple-500/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+      <div className="absolute left-1/4 bottom-1/3 w-80 h-80 bg-cyan-500/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
 
-      {/* Projects Grid */}
+      {/* Heading */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+          Featured Projects
+        </h2>
+        <div className="h-1 w-20 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mt-4 rounded-full" />
+      </motion.div>
+
+      {/* Grid */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
         {PROJECTS.map((ele) => (
           <motion.div
             key={ele.id}
             variants={cardVariants}
-            whileHover={{
-              y: -12,
-              transition: { duration: 0.3 },
-            }}
-            className="group overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-lg shadow-xl"
+            whileHover={{ y: -8 }}
+            className="group flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-slate-900/40 backdrop-blur-xl transition-all duration-300 hover:border-cyan-500/30 hover:shadow-[0_10px_30px_rgba(6,182,212,0.1)]"
           >
-            {/* Image */}
-            <div className="overflow-hidden p-2">
-              <motion.img
-                src={ele.image}
-                alt={ele.name}
-                whileHover={{ scale: 1.08 }}
-                transition={{ duration: 0.5 }}
-                className="rounded-xl w-full h-48 object-fill mb-4"
-              />
+            <div>
+              {/* Image with Aspect Video and zoom hover */}
+              <div className="relative aspect-video w-full overflow-hidden p-2">
+                <div className="relative h-full w-full overflow-hidden rounded-2xl bg-slate-950">
+                  <motion.img
+                    src={ele.image}
+                    alt={ele.name}
+                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-xs font-semibold text-cyan-300 flex items-center gap-1">
+                      Explore Live Demo <FiExternalLink size={12} />
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                {/* Title */}
+                <h3 className="text-lg font-bold text-white transition-colors duration-300 group-hover:text-cyan-300">
+                  {ele.name}
+                </h3>
+
+                {/* Tags */}
+                {ele.tags && (
+                  <div className="flex flex-wrap gap-2 mt-3 mb-4">
+                    {ele.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="text-[10px] font-medium px-2.5 py-1 rounded-md border border-white/5 bg-white/5 text-slate-300"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Description */}
+                <p className="text-sm text-slate-400 leading-relaxed font-light line-clamp-4">
+                  {ele.description}
+                </p>
+              </div>
             </div>
 
-            {/* Content */}
-            <div className="flex flex-col p-6">
-              <h2 className="text-base md:text-lg font-bold text-white mb-3">
-                {ele.name}
-              </h2>
-
-              <p className="text-gray-300 text-sm md:text-md leading-relaxed flex-grow">
-                {ele.description}
-              </p>
-
-              {/* Button */}
+            {/* Action */}
+            <div className="px-6 pb-6 pt-2">
               <motion.a
                 href={ele.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{
-                  scale: 1.05,
-                }}
-                whileTap={{
-                  scale: 0.95,
-                }}
-                className="mt-6 inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition-all duration-300 hover:shadow-lg hover:shadow-white/20"
+                whileTap={{ scale: 0.98 }}
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 hover:bg-white text-white hover:text-black py-3 text-sm font-semibold transition-all duration-300"
               >
-                View Project →
+                View Project <FiExternalLink size={14} />
               </motion.a>
             </div>
           </motion.div>

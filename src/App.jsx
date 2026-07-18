@@ -15,14 +15,14 @@ import AnimatedCursor from "./Components/AnimatedCursor";
 
 function App() {
   return (
-    <div>
-      <div className="relative h-full overflow-y-auto antialiased   ">
+    <div className="overflow-x-hidden">
+      <div className="relative h-full overflow-y-auto antialiased">
         <div className="inset-0 bg-fixed bg-cover bg-center bg-img">
-          <div className="relative z-10 flex flex-col items-center px-4 md:px-6 space-y-8 container mx-auto " >
-             <AnimatedCursor />
+          <div className="relative z-10 flex flex-col items-center px-4 md:px-6 space-y-8 container mx-auto w-full" >
+            <AnimatedCursor />
             <MyProfile />
             <NavBar />
-            <Bio />
+            {/* <Bio />? */}
             <Exprience />
             <NewSkills />
             <Projects />

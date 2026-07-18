@@ -55,14 +55,18 @@ function ConnectForm() {
           email: data.email,
           message: data.message,
         },
-        "rbLde6NDZEcWcxx_Z"
+        {
+          publicKey: "rbLde6NDZEcWcxx_Z",
+        }
       );
 
       toast.success("Message sent successfully!");
 
       reset();
     } catch (error) {
-      toast.error("Failed to send message.");
+      console.error("EmailJS Error:", error);
+      const errorMsg = error?.text || error?.message || "Check your credentials/network";
+      toast.error(`Failed to send: ${errorMsg}`);
     } finally {
       setIsSending(false);
     }
@@ -71,7 +75,7 @@ function ConnectForm() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto"
+      className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto w-full"
     >
       <Toaster position="top-right" />
 
@@ -103,18 +107,19 @@ function ConnectForm() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid lg:grid-cols-2 gap-10"
+        className="grid lg:grid-cols-2 gap-10 w-full"
       >
         {/* Left Section */}
         <motion.div
           variants={itemVariants}
           whileHover={{ y: -5 }}
           className="
+            w-full
             rounded-3xl
             border border-cyan-500/20
             bg-white/5
             backdrop-blur-xl
-            p-8
+            p-6 sm:p-8
             shadow-[0_0_40px_rgba(34,211,238,0.08)]
           "
         >
@@ -141,15 +146,16 @@ function ConnectForm() {
                 bg-white/5
                 hover:bg-white/10
                 transition-all
+                min-w-0
               "
             >
-              <div className="p-2 rounded-xl bg-cyan-500/10">
+              <div className="p-2 rounded-xl bg-cyan-500/10 flex-shrink-0">
                 <MdEmail className="text-xl text-cyan-400" />
               </div>
 
-              <div>
+              <div className="min-w-0 overflow-hidden">
                 {/* <h4 className="font-semibold">Email</h4> */}
-                <p className="text-gray-400">
+                <p className="text-gray-400 text-xs sm:text-sm truncate">
                   vsunilpower42@gmail.com
                 </p>
               </div>
@@ -167,15 +173,16 @@ function ConnectForm() {
                 bg-white/5
                 hover:bg-white/10
                 transition-all
+                min-w-0
               "
             >
-              <div className="p-2 rounded-xl bg-cyan-500/10">
+              <div className="p-2 rounded-xl bg-cyan-500/10 flex-shrink-0">
                 <FaSquarePhone className="text-xl text-cyan-400" />
               </div>
 
-              <div>
+              <div className="min-w-0 overflow-hidden">
                 {/* <h4 className="font-semibold">Phone</h4> */}
-                <p className="text-gray-400">
+                <p className="text-gray-400 text-xs sm:text-sm truncate">
                   +91 6303141055
                 </p>
               </div>
@@ -196,7 +203,7 @@ function ConnectForm() {
               rounded-full
               bg-cyan-400
               px-8
-              py-2
+              py-3
               font-semibold
               text-black
               shadow-lg
@@ -212,11 +219,12 @@ function ConnectForm() {
           variants={itemVariants}
           onSubmit={handleSubmit(onSubmit)}
           className="
+            w-full
             rounded-3xl
             border border-white/10
             bg-white/5
             backdrop-blur-xl
-            p-8
+            p-6 sm:p-8
             shadow-xl
           "
         >
@@ -325,7 +333,7 @@ function ConnectForm() {
               w-full
               rounded-xl
               bg-cyan-400
-              py-2
+              py-3
               font-semibold
               text-black
               flex
